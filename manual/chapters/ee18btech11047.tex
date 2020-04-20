@@ -18,6 +18,13 @@ Find the value of output y(t) at t=1 sec(rounded off to three decimals)
 \dot{\vec{x}}(t)&=\vec{A}\vec{x}(t)+\vec{B}\vec{u}(t) \label{eq:num_1}\\
  \vec{y}(t)&=\vec{C}\vec{x}(t)+\vec{D} \vec{u}(t) \label{eq:num_2}
 \end{align}
+with parameters listed in Table \ref{table:ee18btech11004}.
+\begin{table}
+\centering
+\input{./tables/ee18btech11004.tex}
+\caption{}
+\label{table:ee18btech11004}
+\end{table}
 \item Find the output function $\vec{Y}(s)$ of the system.
 \\
 \solution Apply Laplace transform for the equation(\ref{eq:num_1})
@@ -28,21 +35,20 @@ Find the value of output y(t) at t=1 sec(rounded off to three decimals)
 \end{align}
 Now apply Laplace transform for the equation(\ref{eq:num_2})
 \begin{align}
-    \vec{Y}(s)&= \vec{CX}(s)+D\vec{IU}(s)
+    \vec{Y}(s)&= \vec{CX}(s)+\vec{D}\vec{U}(s)
 \end{align}
 Substitute $\vec{X}(s)$ from equation(\ref{eq:num_3})
 \begin{multline}
-\vec{Y}(s)=( \vec{C}{(s\vec{I}-\vec{A})^{-1}}\vec{B}+D\vec{I}) \vec{U}(s) 
+\vec{Y}(s)=( \vec{C}{(s\vec{I}-\vec{A})^{-1}}\vec{B}+\vec{D}) \vec{U}(s) 
 \\
 + \vec{C}(s\vec{I}-\vec{A})^{-1}\vec{x}(0) \label{eq:num_4}
 \end{multline}
-
 \item Given
 \begin{align}
 \vec{A}&=\myvec{0&1\\0&-2}\\
 \vec{B}&=\myvec{0\\1}\\
 \vec{C}&=\myvec{1&0}\\
-\vec{D}&=0\\
+\vec{D}&=\myvec{0&0}\\
 \vec{x}(0)&=\myvec{1\\0}
 \end{align}
 Substituting the above in equation(\ref{eq:num_4})
@@ -58,6 +64,9 @@ Applying inverse laplace transform on Y(s),
 y(t)&=(\frac{1}{4}e^{-2t}+\frac{3}{4}+\frac{1}{2}t)u(t)
 \end{align}
 y(t) at t=1 sec is
-y(1)=1.284(rounded off to three decimals)
-
+y(1)=1.284(rounded off to three decimals)\\
+The following code verifies the answer.
+\begin{lstlisting}
+codes/ee18btech11047.py
+\end{lstlisting}
 \end{enumerate}
