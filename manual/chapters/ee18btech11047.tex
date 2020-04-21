@@ -18,36 +18,14 @@ Find the value of output y(t) at t=1 sec(rounded off to three decimals)
 \dot{\vec{x}}(t)&=\vec{A}\vec{x}(t)+\vec{B}\vec{u}(t) \label{eq:num_1}\\
  \vec{y}(t)&=\vec{C}\vec{x}(t)+\vec{D} \vec{u}(t) \label{eq:num_2}
 \end{align}
-with parameters listed in Table \ref{table:ee18btech11004}.
-\begin{table}[!ht]
-\centering
-\input{./tables/ee18btech11004.tex}
-\caption{}
-\label{table:ee18btech11004}
-\end{table}
-\item Find the transfer function $\vec{H}(s)$ of the system.
+\item Find the transfer function $\vec{H}(s)$ of the system with non-zero initial condition.
 \\
-\solution Apply Laplace transform for the equation(\ref{eq:num_1})
-\begin{align}
- s\vec{IX}(s)-\vec{x}(0)&= \vec{AX}(s)+ \vec{BU}(s)\\
-(s\vec{I}-\vec{A})\vec{X}(s)&= \vec{BU}(s)+ \vec{x}(0)\\
-\vec{X}(s)&={(s\vec{I}-\vec{A})^{-1}}\vec{B U}(s)\\ &+(s\vec{I}-\vec{A})^{-1}\vec{x}(0) \label{eq:num_3}
-\end{align}
-Now apply Laplace transform for the equation(\ref{eq:num_2})
-\begin{align}
-    \vec{Y}(s)&= \vec{CX}(s)+\vec{D}\vec{U}(s)
-\end{align}
-Substitute $\vec{X}(s)$ from equation(\ref{eq:num_3})
-\begin{multline}
-\vec{Y}(s)=( \vec{C}{(s\vec{I}-\vec{A})^{-1}}\vec{B}+\vec{D}) \vec{U}(s) 
-\\
-+ \vec{C}(s\vec{I}-\vec{A})^{-1}\vec{x}(0) 
-\end{multline}
+\solution Referring to equation(\ref{eq:ee18btech11004_siso})
 \begin{align}
 \vec{H}(s) = \frac{\vec{Y}(s)}{\vec{U}(s)}
 \end{align}
 \begin{multline}
-\vec{H}(s)=( \vec{C}{(s\vec{I}-\vec{A})^{-1}}\vec{B}+\vec{D}) 
+\vec{H}(s)=( \vec{C}{(s\vec{I}-\vec{A})^{-1}}\vec{B}+\vec{D}) \label{eq:ee18btech11047_TF}
 \\
 + s\vec{C}(s\vec{I}-\vec{A})^{-1}\vec{x}(0) \label{eq:num_4}
 \end{multline}
@@ -59,11 +37,16 @@ Substitute $\vec{X}(s)$ from equation(\ref{eq:num_3})
 \vec{D}&=\myvec{0&0}\\
 \vec{x}(0)&=\myvec{1\\0}
 \end{align}
-Substituting the above in equation(\ref{eq:num_4})
+\item Find system transfer function.\\
+\solution From equation(\ref{eq:num_4})
 \begin{align}
 {H}(s) = \frac{s^{3}+2s^{2}+s}{s^{3}+2s^{2}}
 \end{align}
-\item Find the output Y(s) of the system.
+The following code gives transfer function with non-zero initial conditions.
+\begin{lstlisting}
+codes/ee18btech11047/ee18btech11047_1.py
+\end{lstlisting}
+\item Find the unit step response of the system.
 \\
 \solution
 \begin{align}
@@ -71,18 +54,21 @@ Substituting the above in equation(\ref{eq:num_4})
 \\
 {Y}(s)&=\frac{s^{2}+2s+1}{s^{3}+2s^{2}}
 \end{align}
-Splitting into partial fractions ,
-\begin{align}
-{Y}(s)=\frac{1}{4(s+2)}+\frac{3}{4s}+\frac{1}{2s^{2}}
-\end{align}
 Applying inverse laplace transform on Y(s),
 \begin{align}
 y(t)&=(\frac{1}{4}e^{-2t}+\frac{3}{4}+\frac{1}{2}t)u(t)
 \end{align}
-y(t) at t=1 sec is
+\item Find the value of output y(t) at t=1 sec. \\
+\solution
 y(1)=1.284(rounded off to three decimals)\\
-The following code verifies the answer.
+The following code verifies the answer and plots unit step response.
 \begin{lstlisting}
-codes/ee18btech11047.py
+codes/ee18btech11047/ee18btech11047_2.py
 \end{lstlisting}
+\begin{figure}[!ht]
+\centering
+  \includegraphics[width=\columnwidth]{./figs/ee18btech11047.eps}
+  \caption{}
+  \label{fig:ee18btech11047}
+\end{figure}
 \end{enumerate}
