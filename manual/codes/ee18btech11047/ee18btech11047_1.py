@@ -1,3 +1,7 @@
+
+# Code by Tejaswini
+# output from state space model with non-zero initial conditions
+
 import sympy as sp
 import numpy as np
 from sympy.abc import s,t
@@ -32,7 +36,7 @@ def y(t):			# function to find output y(t) i.e. in time domain
 	
 print('Y(s) = ',np.array(Y_S))
 print("y(t) = ",y(t)) # Heaviside(t) = u(t) i.e. unit step function
-print("The value of y(t) at t = 1 sec is ", float(y(1))) #required answer
+print("The value of y(t) at t = 1 sec is ", y(1)) #required answer
 
 
 
