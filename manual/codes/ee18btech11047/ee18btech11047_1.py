@@ -1,5 +1,7 @@
 
 # Code by Tejaswini
+#April 21,2020
+#Released under GNU GPL
 # output from state space model with non-zero initial conditions
 
 import sympy as sp
