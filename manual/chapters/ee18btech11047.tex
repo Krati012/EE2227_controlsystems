@@ -25,7 +25,7 @@ with parameters listed in Table \ref{table:ee18btech11004}.
 \caption{}
 \label{table:ee18btech11004}
 \end{table}
-\item Find the output function $\vec{Y}(s)$ of the system.
+\item Find the transfer function $\vec{H}(s)$ of the system.
 \\
 \solution Apply Laplace transform for the equation(\ref{eq:num_1})
 \begin{align}
@@ -41,7 +41,15 @@ Substitute $\vec{X}(s)$ from equation(\ref{eq:num_3})
 \begin{multline}
 \vec{Y}(s)=( \vec{C}{(s\vec{I}-\vec{A})^{-1}}\vec{B}+\vec{D}) \vec{U}(s) 
 \\
-+ \vec{C}(s\vec{I}-\vec{A})^{-1}\vec{x}(0) \label{eq:num_4}
++ \vec{C}(s\vec{I}-\vec{A})^{-1}\vec{x}(0) 
+\end{multline}
+\begin{align}
+\vec{H}(s) = \frac{\vec{Y}(s)}{\vec{U}(s)}
+\end{align}
+\begin{multline}
+\vec{H}(s)=( \vec{C}{(s\vec{I}-\vec{A})^{-1}}\vec{B}+\vec{D}) 
+\\
++ s\vec{C}(s\vec{I}-\vec{A})^{-1}\vec{x}(0) \label{eq:num_4}
 \end{multline}
 \item Given
 \begin{align}
@@ -53,7 +61,15 @@ Substitute $\vec{X}(s)$ from equation(\ref{eq:num_3})
 \end{align}
 Substituting the above in equation(\ref{eq:num_4})
 \begin{align}
-{Y}(s)=\frac{s^{2}+2s+1}{s^{3}+2s^{2}}
+{H}(s) = \frac{s^{3}+2s^{2}+s}{s^{3}+2s^{2}}
+\end{align}
+\item Find the output Y(s) of the system.
+\\
+\solution
+\begin{align}
+{Y}(s) &= {U}(s){H}(s)
+\\
+{Y}(s)&=\frac{s^{2}+2s+1}{s^{3}+2s^{2}}
 \end{align}
 Splitting into partial fractions ,
 \begin{align}
