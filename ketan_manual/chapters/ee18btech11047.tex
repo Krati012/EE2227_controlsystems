@@ -61,7 +61,7 @@ codes/ee18btech11047/ee18btech11047_1.py
 \begin{table}[!ht]
 \centering
 \input{./tables/ee18btech11047/ee18btech11047.tex}
-\caption{1}
+\caption{}
 \label{table:ee18btech11047}
 \end{table}
 The real poles \brak{p_{1},p_{2}} and zeros \brak{z_{1},z_{2}} cancel out each other as mentioned above.So, we are left with the two conjugate poles.\\
@@ -80,14 +80,14 @@ codes/ee18btech11047/ee18btech11047_2.py
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=\columnwidth]{./figs/ee18btech11047/ee18btech11047_2.eps}
-\caption{}
+\caption{1}
 \label{fig:ee18btech11047_2}
 \end{figure}
 The phase margin is 
 \begin{align}
 \phi_{M} &= 180\degree-150.7\degree \implies \phi_{M} = 29.3\degree \label{eq:ee18btech11047_ph}
 \end{align}
-The closed-loop bandwith, $\omega_{BW}$(-3 dB frequency), equals the frequency at which the open-loop magnitude ressponse is around -7 dB.
+The closed-loop bandwith, $\omega_{BW}$(-3 dB frequency), equals the frequency at which the open-loop magnitude response is around -7 dB.
 \begin{align}
 \omega_{BW} = 10.1  rad/sec \label{eq:ee18btech11047_bw}
 \end{align}
@@ -121,14 +121,14 @@ codes/ee18btech11047/ee18btech11047_3.py
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=\columnwidth]{./figs/ee18btech11047/ee18btech11047_3.eps}
-\caption{}
+\caption{2}
 \label{fig:ee18btech11047_3}
 \end{figure}
 \item Find the approximate transfer function for the open loop transfer function
 \begin{align}
 G(s) &= \frac{75(1+0.2s)}{s(s^{2}+16s+100)}
 \end{align}
-\solution Using equation(\ref{eq:ee18btech11047_ctf})
+\solution Using equation \eqref{eq:ee18btech11047_ctf}
 \begin{align}
 T(s) = \frac{75(1+0.2s)}{s^3 + 16s^2 + 115s +75} 
 \end{align}
@@ -165,7 +165,7 @@ T_{r} &= \frac{2.2}{|pole|}\\
 T_{r} &= \frac{2.2}{0.72} = 3.05 sec
 \end{align}
 \textbf{Settling time:}\\
-Settling time is defined as the time for the response to reach ,and stay within, 2\% of its final value.
+Settling time is defined as the time for the response to reach and stay within, 2\% of its final value.
 \begin{align}
 T_{s} &= \frac{4}{|pole|}\\
 T_{s} &= \frac{4}{0.72}=5.55 sec
