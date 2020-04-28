@@ -1,5 +1,7 @@
 #Code by Tejaswini
 #Date 28 April 2020
+#Released under GNU GPL
+
 import numpy as np
 from scipy import signal
 import matplotlib.pyplot as plt
@@ -36,8 +38,8 @@ plt.ylabel("y(t)")
 plt.legend()
 
 #if using termux
-#plt.savefig('./figs/ee18btech11047_3.pdf')
-#plt.savefig('./figs/ee18btech11047_3.eps')
-#subprocess.run(shlex.split("termux-open ./figs/ee18btech11047_3.pdf"))
+plt.savefig('./figs/ee18btech11047_3.pdf')
+plt.savefig('./figs/ee18btech11047_3.eps')
+subprocess.run(shlex.split("termux-open ./figs/ee18btech11047_3.pdf"))
 #else
-plt.show()
+#plt.show()

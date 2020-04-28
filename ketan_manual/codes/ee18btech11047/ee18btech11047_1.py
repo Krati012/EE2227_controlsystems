@@ -1,5 +1,6 @@
 #Code by Tejaswini
 #Date 28 April,2020
+#Released under GNU GPL
 
 import numpy as np
 
