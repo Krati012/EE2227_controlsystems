@@ -38,8 +38,8 @@ plt.xlabel("Time")
 plt.ylabel("y(t)")
 plt.legend()
 #if using termux
-plt.savefig('./figs/ee18btech11047_4.pdf')
-plt.savefig('./figs/ee18btech11047_4.eps')
-subprocess.run(shlex.split("termux-open ./figs/ee18btech11047_4.pdf"))
+plt.savefig('./figs/ee18btech11047/ee18btech11047_4.pdf')
+plt.savefig('./figs/ee18btech11047/ee18btech11047_4.eps')
+subprocess.run(shlex.split("termux-open ./figs/ee18btech11047/ee18btech11047_4.pdf"))
 #else
 #plt.show()
