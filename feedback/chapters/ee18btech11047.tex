@@ -1,0 +1,145 @@
+\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
+\numberwithin{equation}{enumi}
+
+\item For the circuit shown in Fig. \ref{fig:ee18btech11047_fig1}, find $L(s)$, $L(j\omega)$, the frequency for zero loop phase, and $R_{2}/R_{1}$ for oscillation.
+\renewcommand{\thefigure}{\theenumi.\arabic{figure}}
+%
+\begin{figure}[!ht]
+	\begin{center}
+		\resizebox{\columnwidth}{!}{\input{./figs/ee18btech11047/ee18btech11047_1.tex}}
+	\end{center}
+\caption{}
+\label{fig:ee18btech11047_fig1}
+\end{figure}
+%
+\\
+\solution The equivalent control system representation is shown in Fig. \ref{fig:ee18btech11047_fig2}. Oscillators do not include input signal.
+\begin{figure}[!ht]
+	\begin{center}
+		\resizebox{\columnwidth}{!}{\input{./figs/ee18btech11047/ee18btech11047_2.tex}}
+	\end{center}
+\caption{}
+\label{fig:ee18btech11047_fig2}
+\end{figure}
+\renewcommand{\thefigure}{\theenumi}
+\item Find the open loop gain $G$.\\
+\solution Let the closed loop gain, open-loop gain of op-amp connected in non-inverting configuration be $T_{1}$ and $G_{1}$ respectively.
+From Table \ref{table:ee18btech11005_Output_Table}
+\begin{align}
+T_{1} &= \frac{G_{1}\brak{R_1+R_2}}{\brak{R_1+R_2}+G_{1}R_1}
+\end{align}
+\begin{align}
+T_{1} &= \frac{\brak{R_1+R_2}}{\brak{R_1+R_2}/G_{1}+R_1}
+\end{align}
+Assuming $G_{1}\to\infty$
+\begin{align}
+T_{1} &= 1 + \frac{R_{2}}{R_{1}}
+\end{align}
+The open loop gain of the circuit shown in Fig. \ref{fig:ee18btech11047_fig1} is equal to the closed loop gain of an op-amp connected in non-inverting configuration.
+\begin{align}
+G &= T_{1}
+\end{align}
+\begin{align}
+\label{eq:ee18btech11047_1}
+\implies G = 1 + \frac{R_{2}}{R_{1}}
+\end{align}
+%
+\item Find the feedback factor $H$. \\
+\solution The small signal model is shown in Fig. \ref{fig:ee18btech11047_fig3}
+\begin{figure}[!ht]
+	\begin{center}
+		\resizebox{\columnwidth}{!}{\input{./figs/ee18btech11047/ee18btech11047_3.tex}}
+	\end{center}
+\caption{}
+\label{fig:ee18btech11047_fig3}
+\end{figure}
+Applying KCL at node $V_f$
+\begin{align}
+\frac{V_{f} - 0}{\frac{1}{sC}} +\frac{V_{f} - V_{a}}{R} &= 0
+\end{align}
+\begin{align}
+V_{f}\brak{sC+\frac{1}{R}} &= \frac{V_{a}}{R} 
+\end{align}
+\begin{align}
+\label{eq:ee18btech11047_2}
+V_{a} &= V_{f}\brak{sRC + 1} 
+\end{align}
+Applying KCL at node $V_{a}$
+\begin{align}
+\frac{V_{a} - V_{f}}{R} + \frac{V_{a} - 0}{R} + \frac{V_{a} - V_{o}}{\frac{1}{sC}} &= 0
+\end{align}
+\begin{align}
+V_{a}\brak{\frac{2}{R} +sC} &= \frac{V_{f}}{R} + V_{o}sC
+\end{align}
+Substitute $V_{a}$ value from equation\eqref{eq:ee18btech11047_2}
+\begin{align}
+V_{f}(sRC + 1)\brak{\frac{2}{R} + sC} &= \frac{V_{f}}{R} + V_{o}sC
+\end{align}
+\begin{align}
+V_{f}\brak{3 + sRC + \frac{1}{sRC}} &= V_{o}
+\end{align}
+The feedback factor H is given by 
+\begin{align}
+H &= \frac{V_{f}}{V_{o}}
+\end{align}
+\begin{align}
+\label{eq:ee18btech11047_3}
+\implies H &= \frac{1}{\brak{3+sRC +\frac{1}{sRC}}}
+\end{align}
+%
+\item Find the loop gain L(s).\\
+\solution The transfer function of the equivalent positive feedback circuit in Fig. \ref{fig:ee18btech11047_fig2} is  
+\begin{align}
+T &= \frac{G}{1-GH}
+\end{align}
+Therefore, loop gain is given by 
+\begin{align}
+L &= GH
+\end{align}
+From equations \eqref{eq:ee18btech11047_1} and \eqref{eq:ee18btech11047_3}
+\begin{align}
+L(s) &= \brak{1 + \frac{R_{2}}{R_{1}}}\brak{\frac{1}{3+sRC+\frac{1}{sRC}}}
+\end{align}
+\begin{align}
+\label{eq:ee18btech11047_4}
+\implies L(s) &= \brak{\frac{1+\frac{R_{2}}{R_{1}}}{3+sRC+\frac{1}{sRC}}}
+\end{align}
+%
+\item Find the loop gain in terms of $j\omega$ .\\
+\solution Substitute $s = j\omega$ in equation \eqref{eq:ee18btech11047_4}
+\begin{align} 
+L(j\omega)&= \brak{\frac{1+\frac{R_{2}}{R_{1}}}{3+j\omega RC+\frac{1}{j\omega RC}}}
+\end{align}
+\begin{align}
+\label{eq:ee18btech11047_5}
+\implies L(j\omega)&= \brak{\frac{1+\frac{R_{2}}{R_{1}}}{3+ j \brak{\omega RC-\frac{1}{\omega RC}}}}
+\end{align}
+\item Find the frequency for zero loop phase.\\
+\solution The frequency at which loop phase will be zero (i.e. loop gain will be a real number).To obtain the required frequency, equate the imaginary part of the loop gain $L(j \omega )$ to zero.
+\begin{align}
+j\brak{\omega RC - \frac{1}{\omega RC}} &= 0
+\end{align}
+\begin{align}
+\omega^{2} &= \frac{1}{(RC)^{2}}
+\end{align}
+\begin{align}
+\implies \omega &= \frac{1}{RC}
+\end{align}
+%
+\item Find $R_{2}/R_{1}$ for oscillation.\\
+\solution For oscillations to start, 
+\begin{itemize}
+    \item the imaginary part of the loop gain should become zero.
+    \item the loop gain must be made greater than unity.
+\end{itemize}
+From equation \eqref{eq:ee18btech11047_5} 
+\begin{align}
+\brak{\frac{1+\frac{R_{2}}{R_{1}}}{3+j(0)}} &> 1
+\end{align}
+\begin{align}
+1+\frac{R_{2}}{R_{1}} &> 3
+\end{align}
+\begin{align}
+\implies \frac{R_{2}}{R_{1}} &> 2
+\end{align}
+\end{enumerate}
