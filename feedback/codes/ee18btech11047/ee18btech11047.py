@@ -10,11 +10,15 @@ import subprocess
 import shlex
 #end if
 
-num = [3*0.0625,3*0.75,3]		#describing transfer function
-den = [0.0625,0,1]
+G = 3
+k=0.25
+#num = [0.0625,0.75,1]		#describing transfer function
+#den = [0.0625,0,1]
+num =[G*(k**2),G*(3*k),G]
+den = [k**2, k*(3-G),1]
 system = signal.lti(num,den)
 
-T, yout = signal.impulse(system)	#oscillating response
+T, yout = signal.step(system)	#oscillating response
 
 plt.plot(T,yout)
 plt.grid()
