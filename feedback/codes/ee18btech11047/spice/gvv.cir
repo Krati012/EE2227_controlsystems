@@ -8,12 +8,11 @@ C2 Vout N003 1m
 XU1 N002 N001 Vcc -Vcc Vout LM741/NS
 V1 Vcc 0 12
 V2 0 -Vcc 12
-.PRINT TRAN t V(vout)
-.tran 0.02ms 25s
+.tran 0.01s 25s
 .include LM741.MOD
 *.backanno
-*.control
-*run
-*plot V(vout)
-*.endc
+.control
+run
+plot V(vout)
+.endc 
 .end
