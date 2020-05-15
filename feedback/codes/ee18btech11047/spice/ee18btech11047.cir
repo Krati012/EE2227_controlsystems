@@ -12,7 +12,6 @@ R4 Vout N005 2030
 .include LM741.MOD
 .control
 run
-plot V(Vout)
 wrdata ee18btech11047.dat V(Vout)
 .endc
 .end
