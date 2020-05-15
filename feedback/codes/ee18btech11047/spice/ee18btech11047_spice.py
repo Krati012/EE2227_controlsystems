@@ -9,11 +9,12 @@ import subprocess
 import shlex
 #end if
 
-data=np.loadtxt('vout.dat')  
+data=np.loadtxt('ee18btech11047.dat')  
 plt.plot(data[:,0],data[:,1])  
 plt.grid()
 plt.xlabel("time")
 plt.ylabel("oscillating response")
+plt.title("Output from spice simulation")
 
 #if using termux
 plt.savefig('./figs/ee18btech11047/ee18btech11047_spice.pdf')
